@@ -6,7 +6,7 @@ switch ($request) {
     case '/' :
         require __DIR__ . '/views/index.php';
         break;
-    case 'https;//phprouting.netlify.app' :
+    case 'https://phprouting.netlify.app' :
         require __DIR__ . '/views/index.php';
         break;
     case '' :
