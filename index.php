@@ -1,14 +1,21 @@
 <?php
 
-require_once "router.php";
+$request = $_SERVER['REQUEST_URI'];
 
-route('/', function () {
-    return "Hello World";
-});
+switch ($request) {
+    case '/Routing/' :
+        require __DIR__ . '/views/index.php';
+        break;
+    case '' :
+        require __DIR__ . '/views/index.php';
+        break;
+    case '/Routing/about/' :
+        require __DIR__ . '/views/about.php';
+        break;
+    default:
+        http_response_code(404);
+        require __DIR__ . '/views/404.php';
+        break;
+}
 
-route('/about', function () {
-    return "Hello form the about route";
-});
-
-$action = $_SERVER['REQUEST_URI'];
-dispatch($action);
+?>
